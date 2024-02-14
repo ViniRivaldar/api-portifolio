@@ -7,17 +7,17 @@
         <title>Adicionar Projetos</title>
     </head>
     <body>
-        <div class="container mt-4">
+        <div class="container mt-4 mb-4">
             <h1 class="text-center mt-4 mb-4" style="font-family: 'Poppins'; font-size: 50px; color: #024AAC;">Adicionar Projetos</h1>
             <div class="card" style="background: #f0f0f0;">
                 <div class="card-body">
                     <form action="/add" method="post">
                         <div class="form-group">
-                            <input type="text" name="titulo" id="titulo" placeholder="Título"class="form-control">
-                        </div> <br>
-                        <div class="form-group">
                             <input type="text" name="video" id="video" placeholder="Video" class="form-control">
                         </div><br>
+                        <div class="form-group">
+                            <input type="text" name="titulo" id="titulo" placeholder="Título"class="form-control">
+                        </div> <br>
                         <div class="form-group">
                             <textarea  id="descrição"  name="descrição" cols="30" rows="5" placeholder="Descrição"class="form-control" style="resize: none"></textarea>
                         </div><br>
