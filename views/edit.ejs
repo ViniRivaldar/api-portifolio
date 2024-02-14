@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Editar Projetos</title>
+    </head>
+    <body>
+        <div class="container mt-4">
+            <h1 class="text-center mt-4 mb-4" style="font-family: 'Poppins'; font-size: 50px; color: #024AAC;">Editar Projetos</h1>
+            <div class="card" style="background: #f0f0f0;">
+                <div class="card-body">
+                    <form action="/edit/<%= projeto._id %>" method="post">
+                        <div class="form-group">
+                            <input type="text" name="titulo" id="titulo" placeholder="Título" value="<%= projeto.titulo %>" class="form-control">
+                        </div><br>
+                        <div class="form-group">
+                            <input type="text" name="video" id="video" placeholder="Vídeo" value="<%= projeto.video %>" class="form-control">
+                        </div><br>
+                        <div class="form-group">
+                            <textarea  id="descrição"  name="descrição" palceholder="Descrição"cols="30" rows="5" class="form-control" style="resize: none"></textarea>
+                        </div><br>
+                        <div class="form-group">
+                            <input type="text" name="urlDoSite" id="urlDoSite" placeholder="Site" value="<%= projeto.urlDoSite %>" class="form-control">
+                        </div><br>
+                        <div class="form-group">
+                            <input type="text" name="urlDoRepositorio" id="urlDoRepositorio" placeholder="Repositório" value="<%= projeto.urlDoRepositorio %>" class="form-control">
+                        </div><br>
+                        <button type="submit" class="btn btn-outline-primary btn-lg">salvar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>
