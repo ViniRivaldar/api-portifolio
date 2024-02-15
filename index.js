@@ -1,11 +1,12 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 const mongoose = require('mongoose')
 const admin = require('./routes/Admin')
 const bodyParser = require('body-parser')
 const ejs = require('ejs')
 const path = require('path')
+const db = require('./.config/db')
 
 app.use(express.json())
 
@@ -22,7 +23,7 @@ app.set('views', path.join(__dirname,'views'))
 
 
 mongoose.Promisse = global.Promisse
-mongoose.connect('mongodb://127.0.0.1:27017/portifólio').then(()=>{
+mongoose.connect( "mongodb+srv://ViniRiva:134679.Vrdss@protifolio-adm.tq9y79v.mongodb.net/portifólio").then(()=>{
     console.log(`mongo connected...`)
 }).catch((err)=>{
     console.log(`erro de ${err}`)
