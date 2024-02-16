@@ -31,7 +31,7 @@ const adcionar = async(req, res)=>{
         res.send(projeto)
     }catch(err){
         res.status(400).send(err)
-    }
+    } 
 }
 
 const editar = async (req, res) => {
@@ -50,8 +50,9 @@ const editar = async (req, res) => {
         const projetos = await Projeto.find({});
 
         res.status(201).json({projetos}); 
+        
     } catch (err) {
-        console.error(err);
+        console.log(err);
         res.status(500).send('Erro ao atualizar o projeto');
     }
 }
