@@ -8,7 +8,12 @@ const cors = require('cors')
 
 
 app.use(express.json())
-app.use(cors())
+
+let corsOption = {
+    origin:'http://127.0.0.1:5500',
+    optionsSuccessStatus: 200 
+}
+app.use(cors(corsOption))
 
 
 app.use(bodyParser.urlencoded({extended:true}))
