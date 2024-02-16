@@ -32,7 +32,7 @@ mongoose.connect(process.env.MONGODB_URL).then(()=>{
 
 
 
-app.use('https://api-portifolio-five.vercel.app/', admin)
+app.use('/', admin)
 
 
 

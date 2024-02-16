@@ -9,11 +9,11 @@ require('../models/Projeto')
 const Projeto = mongoose.model('projetos')
 
 
-router.get('/index',async(req,res) => {
+router.get('/main',async(req,res) => {
     try{
         const projetos = await Projeto.find({});
 
-        res.render('../views/index', { projetos: projetos })
+        res.render('../views/main', { projetos: projetos })
     }catch(err){
         res.status(500).send("Erro ao buscar projeto");
     }
@@ -47,7 +47,7 @@ router.post('/add', async(req, res)=>{
     try{
         await projeto.save()
         
-        res.redirect('/index')
+        res.redirect('/main')
     }catch(err){
         res.send(err)
     }
@@ -69,7 +69,7 @@ router.post('/edit/:id', async (req, res) => {
         await Projeto.findByIdAndUpdate(req.params.id, updatedProjeto);
         const projetos = await Projeto.find({});
 
-        res.redirect('/index'); 
+        res.redirect('/main'); 
     } catch (err) {
         console.error(err);
         res.status(500).send('Erro ao atualizar o projeto');
@@ -78,7 +78,7 @@ router.post('/edit/:id', async (req, res) => {
 router.post('/:id', async (req, res) => {
     try {
         await Projeto.findByIdAndDelete(req.params.id);
-        res.redirect('/index');
+        res.redirect('/main');
     } catch (err) {
         console.error(err);
         res.status(500).send('Erro ao excluir o projeto');
