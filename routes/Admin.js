@@ -9,7 +9,7 @@ require('../models/Projeto')
 const Projeto = mongoose.model('projetos')
 
 
-router.get('/index',async(req,res) => {
+router.get('https://api-portifolio-five.vercel.app/index/index',async(req,res) => {
     try{
         const projetos = await Projeto.find({});
 
