@@ -36,7 +36,7 @@ const adcionar = async(req, res)=>{
 
 const editar = async (req, res) => {
     try {
-        const { titulo, video, descrição, urlDoSite, urlDoRepositorio } = req.body;
+        const { titulo, video, descricao, urlDoSite, urlDoRepositorio } = req.body;
 
         const updatedProjeto = {
             titulo,
