@@ -19,7 +19,7 @@ const adcionar = async(req, res)=>{
     let projeto = new Projeto({
         titulo: req.body.titulo,
         video: req.body.video,
-        descrição: req.body.descrição,
+        descricao: req.body.descrição,
         urlDoSite: req.body.urlDoSite,
         urlDoRepositorio: req.body.urlDoRepositorio
     });
@@ -41,7 +41,7 @@ const editar = async (req, res) => {
         const updatedProjeto = {
             titulo,
             video,
-            descrição,
+            descricao,
             urlDoSite,
             urlDoRepositorio
         };
