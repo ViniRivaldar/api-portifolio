@@ -8,10 +8,11 @@ const bodyParser = require('body-parser')
 const ejs = require('ejs')
 const path = require('path')
 const db = process.env.MONGODB_URL
+const cors = require('cors')
 
 
 app.use(express.json())
-
+app.use(cors())
 
 
 app.use(bodyParser.urlencoded({extended:true}))
