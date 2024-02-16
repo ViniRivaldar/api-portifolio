@@ -15,6 +15,7 @@ const listar = async (req, res) => {
 }
 
 const adcionar = async(req, res)=>{
+    console.log(req.body)
     
     let projeto = new Projeto({
         titulo: req.body.titulo,
