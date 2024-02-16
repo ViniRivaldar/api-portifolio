@@ -4,8 +4,6 @@ const app = express()
 const mongoose = require('mongoose')
 const admin = require('./routes/Admin')
 const bodyParser = require('body-parser')
-const ejs = require('ejs')
-const path = require('path')
 const cors = require('cors')
 
 
@@ -16,9 +14,7 @@ app.use(cors())
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json())
 
-app.set('view engine', 'ejs');
 
-app.set('views', path.join(__dirname,'views'))
 
 
 
