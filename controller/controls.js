@@ -19,7 +19,7 @@ const adcionar = async(req, res)=>{
     let projeto = new Projeto({
         titulo: req.body.titulo,
         video: req.body.video,
-        descricao: req.body.descrição,
+        descricao: req.body.descricao,
         urlDoSite: req.body.urlDoSite,
         urlDoRepositorio: req.body.urlDoRepositorio
     });
