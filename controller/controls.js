@@ -28,7 +28,7 @@ const adcionar = async(req, res)=>{
     try{
         await projeto.save()
         
-        res.send(projeto)
+        res.status(201).redirect("https://adminportifolio.vercel.app/")
     }catch(err){
         res.status(400).send(err)
     } 
