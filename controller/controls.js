@@ -49,7 +49,7 @@ const editar = async (req, res) => {
         await Projeto.findByIdAndUpdate(req.params.id, updatedProjeto);
         const projetos = await Projeto.find({});
 
-        res.status(201).json({projetos}); 
+        res.status(201).redirect('https://adminportifolio.vercel.app/'); 
         
     } catch (err) {
         console.log(err);
@@ -60,7 +60,7 @@ const editar = async (req, res) => {
 const deletar = async (req, res) => {
     try {
         await Projeto.findByIdAndDelete(req.params.id);
-        res.status(200).send({projeto});
+        res.status(200).redirect("https://adminportifolio.vercel.app/");
     } catch (err) {
         console.error(err);
         res.status(500).send('Erro ao excluir o projeto');
