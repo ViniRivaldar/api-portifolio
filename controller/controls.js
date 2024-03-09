@@ -14,6 +14,21 @@ const listar = async (req, res) => {
     }
 }
 
+const listarId = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const projeto = await Projeto.findById(id);
+        if (!projeto) {
+            return res.status(404).send("Projeto não encontrado");
+        }
+        res.json({ projeto: projeto });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Erro ao buscar projeto");
+    }
+}
+
+
 const adcionar = async(req, res)=>{
     
     let projeto = new Projeto({
@@ -67,6 +82,6 @@ const deletar = async (req, res) => {
     }
 }
 
-module.exports = {adcionar, listar,editar,deletar}
+module.exports = {adcionar, listar, listarId, editar,deletar}
 
 
